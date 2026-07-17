@@ -17,6 +17,15 @@
 </div>
 
 
+## 🏦 本 Fork 新增：账号托管市场（Account Custody Marketplace）
+
+本仓库在 sub2api 基础上二次开发，新增「**非管理员用户托管自己的订阅账号 → 被调用时按分成获取收益 → 提现**」的双边市场（对标号主分成模式）。基础版 sub2api 的账号是管理员全局资源；本功能补齐了归属 / 用量归属计费 / 收益结算 / 提现 / 托管入口五层。
+
+- 📖 **完整设计与落地手册：[docs/ACCOUNT_CUSTODY_CN.md](docs/ACCOUNT_CUSTODY_CN.md)**
+- 🧩 新增模块：A 账号归属 · B 用户托管入口 · C 用量归属与收益结算 · D 提现（+ 前端「号主中心」页）
+- ⚠️ **WIP**：本机未编译验证，落地需按手册跑 `go generate ./ent` + `go generate ./cmd/server` + `go build` 收尾；风控加固项（凭证加密、托管号去重、封号联动、管理端提现列表等）见手册第 7 节，**尚未实现**。
+- 📜 基于 [Wei-Shaw/sub2api](https://github.com/Wei-Shaw/sub2api)（LGPL-3.0），保留原 LICENSE 与署名。
+
 ## ⚠️ 重要提醒
 
 使用本项目前，请务必仔细阅读以下内容：
